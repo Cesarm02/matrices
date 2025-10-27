@@ -66,6 +66,27 @@ class Matriz{
         }
     }
 
+    void multiplicarMatrices(Matriz matrizA, Matriz matrizB){
+        if(matrizA.n == matrizB.n){
+            n = matrizA.n;
+            m = new double[n][n];
+            double elemento = 0;
+
+            for(int i = 0; i < n ; i++){
+                for (int j = 0; j < n ; j++){
+                    for(int k = 0; k < n; k++){
+                        elemento += matrizA.m[i][k] * matrizB.m[k][j];
+                    }
+                    m[i][j] = elemento;
+                    elemento = 0;
+                }
+            }
+
+        }else{
+            System.out.print("\n Las matrices no tienen la misma dimensión");
+        }
+    }
+
 }
 
 public class Main {
@@ -83,6 +104,8 @@ public class Main {
         m3.sumarMatrices(m1, m2);
         m3.mostrarMatriz();
         m3.restarMatrices(m1, m2);
+        m3.mostrarMatriz();
+        m3.multiplicarMatrices(m1,m2);
         m3.mostrarMatriz();
 
     }
