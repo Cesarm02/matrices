@@ -91,6 +91,7 @@ class Matriz{
 
 public class Main {
     public static void main(String[] args) {
+/*
         Matriz m1 = new Matriz();
         Matriz m2 = new Matriz();
 
@@ -107,6 +108,16 @@ public class Main {
         m3.mostrarMatriz();
         m3.multiplicarMatrices(m1,m2);
         m3.mostrarMatriz();
+*/
 
+        String fileName = "Prueba.txt";
+        String filePath = "C:\\Users\\ESTIVEN\\OneDrive\\Desktop\\Desarrollos pagos\\Ceiba Soft 2\\941148cd-87d0-4e86-8ee8-0fc5e4eddbd5\\marices\\src\\main\\resources";
+        Filetxt registry = new Filetxt(fileName, filePath);
+
+        registry.createRegistry("'ID' \t\t'Nombre'");
+        registry.writeRegistry("'01' \t\t'Sasi'");
+        registry.writeRegistry("'02' \t\t'Copito'");
+        registry.readAndShowRegistry();
     }
 }
+
